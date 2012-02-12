@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Backbone js</title>
+  <meta charset="UTF-8">
+  <title>Backbone js</title>
   <script type="text/javascript" src="js/lib/jquery.js"></script>
   <script type="text/javascript" src="js/lib/underscore.js"></script>
   <script type="text/javascript" src="js/lib/backbone.js"></script>
@@ -11,6 +11,50 @@
 </head>
 <body>
   <div id="wrapper">
+    <div id="tweets">
+    </div>
   </div>
+  <script type="text/template" id="template_tweet_grid">
+  <div class="list">
+    <div class="list_content"></div>
+  </div>
+  <div>
+    <a href="#tweets" class="load_more">Load more tweets...</a>
+    <span class="loading">Loading... Please wait</span>
+    <a href="#tweets" class="reload">Reload tweets</a>
+  </div>
+  </script>
+  <script type="text/template" id="template_tweet_grid_item">
+  <div class="item" data-item-id="{{id}}">
+    <div>
+      <div>{{user.account_name}}</div>
+      <div>
+        <img src="{{user.thumb_url}}" alt="{{user.account_name}}" />
+      </div>
+    </div>
+    <div>{{created_at}}</div>
+    <div>
+      <a href="#tweets/{{id}}">
+        <img src="{{large_url}}" alt="{{user.account_name}}" />
+      </a>
+    </div>
+    <div>{{text}}</div>
+  </div>
+  </script>
+  <script type="text/template" id="template_tweet_detail">
+  <div class="item" data-item-id="{{id}}">
+    <div>
+      <div>{{user.account_name}}</div>
+      <div>
+        <img src="{{user.thumb_url}}" alt="{{user.account_name}}" />
+      </div>
+    </div>
+    <div>{{created_at}}</div>
+    <div>
+      <img src="{{large_url}}" alt="{{user.account_name}}" />
+    </div>
+    <div>{{text}}</div>
+  </div>
+  </script>
 </body>
 </html>
